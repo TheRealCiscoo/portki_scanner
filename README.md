@@ -30,4 +30,4 @@ $ .\portki_scanner.exe -t scanme.nmap.org -r 21-80
 
 ## License
 
-La licencia del proyecto es [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+La licencia del proyecto es [MIT licensed](https://github.com/TheRealCiscoo/portki_scanner/blob/main/LICENSE).
