@@ -12,7 +12,7 @@ func main() {
 
 	validParams := []string{"-t", "-r"}
 	target, err := paramsutils.GetParams(validParams)
-	timeout := 1 // Timeout in seconds for each connection
+	timeout := 3 // Timeout in seconds for each connection
 
 	if err != nil {
 		panic(err)
