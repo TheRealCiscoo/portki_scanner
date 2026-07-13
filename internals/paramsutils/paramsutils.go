@@ -41,8 +41,8 @@ func GetParams(validParams []string) (scannerutils.TargetToScan, error) {
 						return target, errors.New("Invalid value for port range param (-r): port != int")
 					}
 
-					if minPort > maxPort {
-						return target, errors.New("Invalid value for port range param (-r): <start:MinPort>-<end:MaxPort>")
+					if minPort > maxPort || minPort < 0 || maxPort > 65535{
+						return target, errors.New("Invalid value for port range param (-r): <start:MinPort( >= 0)>-<end:MaxPort( < 65535)>")
 					}
 
 					target.PortsRange.Initial = minPort
