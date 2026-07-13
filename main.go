@@ -4,7 +4,6 @@ import (
 	"portki_scanner/internals/paramsutils"
 	"portki_scanner/internals/scannerutils"
 	"sync"
-	"time"
 )
 
 
@@ -12,7 +11,6 @@ func main() {
 
 	validParams := []string{"-t", "-r"}
 	target, err := paramsutils.GetParams(validParams)
-	timeout := 3 // Timeout in seconds for each connection
 
 	if err != nil {
 		panic(err)
@@ -21,6 +19,6 @@ func main() {
 	var wg sync.WaitGroup
 	defer wg.Wait()
 
-	scannerutils.ScanPorts(target, time.Duration(timeout), &wg)
+	scannerutils.ScanPorts(target, &wg)
 
 }
